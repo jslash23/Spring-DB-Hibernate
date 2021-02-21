@@ -77,6 +77,7 @@ public class AppConfig {
     public TestController testController(){
         return new TestController();
     }
+
     @Bean
     public ItemController itemController(){
         return new ItemController();

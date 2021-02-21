@@ -1,10 +1,9 @@
 package com.lesson5;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -12,14 +11,16 @@ public class TestController {
 
     private DAO dao;
     @Autowired
-    /*public TestController(DAO dao) {
+    public TestController(@Qualifier("Dao") DAO dao,
+                          @Qualifier("DAO") DAO dao1) {
         this.dao = dao;
-    }*/
+        this.dao = dao1;
+    }
 
-
-    public void ItemController() {
+    public TestController() {
 
     }
+
 
     @PostMapping("/save-item")
     public @ResponseBody
