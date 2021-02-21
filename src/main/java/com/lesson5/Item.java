@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "ITEMN")
+
 public class Item {
     private long id;
     private String description;

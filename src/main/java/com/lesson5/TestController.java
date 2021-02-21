@@ -11,10 +11,14 @@ public class TestController {
 
     private DAO dao;
     @Autowired
-    public TestController(DAO dao) {
+    /*public TestController(DAO dao) {
         this.dao = dao;
-    }
+    }*/
 
+
+    public void ItemController() {
+
+    }
 
     @RequestMapping(method = RequestMethod.POST, value = "/save-item", produces = "text/plain")
     public @ResponseBody

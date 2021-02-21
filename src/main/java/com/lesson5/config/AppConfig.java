@@ -1,6 +1,10 @@
 package com.lesson5.config;
 
+import com.lesson5.DAO;
+import com.lesson5.ItemController;
+import com.lesson5.TestController;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -16,6 +20,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
+@ComponentScan(basePackages = {"com"})
 
 public class AppConfig {
 
@@ -66,4 +71,20 @@ public class AppConfig {
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.Oracle10gDialect");
         return properties;
     }
+
+
+    @Bean
+    public TestController testController(){
+        return new TestController();
+    }
+    @Bean
+    public ItemController itemController(){
+        return new ItemController();
+    }
+
+    @Bean
+    public DAO Dao(){
+        return new DAO();
+    }
+
 }
