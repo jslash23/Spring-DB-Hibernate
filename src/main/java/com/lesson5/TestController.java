@@ -2,6 +2,7 @@ package com.lesson5;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -20,7 +21,7 @@ public class TestController {
 
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/save-item", produces = "text/plain")
+    @PostMapping("/save-item")
     public @ResponseBody
     String saveOrder() {
         Item item = new Item();
