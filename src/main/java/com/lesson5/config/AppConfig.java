@@ -1,3 +1,7 @@
+// This is a personal academic project. Dear PVS-Studio, please check it.
+
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
 package com.lesson5.config;
 
 import com.lesson5.DAO;
@@ -13,11 +17,12 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import javax.persistence.EntityManagerFactory;
 import java.util.Properties;
 
-
+@EnableWebMvc
 @Configuration
 @EnableTransactionManagement
 @ComponentScan(basePackages = {"com"})
@@ -75,17 +80,20 @@ public class AppConfig {
 
     @Bean
     public TestController testController(){
-        return new TestController();
+        return new TestController(dao());
     }
 
     @Bean
     public ItemController itemController(){
-        return new ItemController();
+        return new ItemController(dao());
     }
 
+
+
     @Bean
-    public DAO Dao(){
+    public DAO dao(){
         return new DAO();
     }
+
 
 }

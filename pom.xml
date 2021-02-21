@@ -73,13 +73,10 @@
       <version>3.12.1.GA</version>
     </dependency>
 
-    <!-- Hibernate -->
-    <!-- for JPA, use hibernate-entitymanager instead of hibernate-core. Support @PersistenceContext -->
-    <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
     <dependency>
-      <groupId>org.hibernate</groupId>
-      <artifactId>hibernate-entitymanager</artifactId>
-      <version>5.3.3.Final</version>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.11.2</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->

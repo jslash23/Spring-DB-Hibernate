@@ -1,3 +1,7 @@
+// This is a personal academic project. Dear PVS-Studio, please check it.
+
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
 package com.lesson5;
 
 import javax.persistence.*;
@@ -6,7 +10,7 @@ import javax.persistence.*;
 @Table(name = "ITEMN")
 
 public class Item {
-    private long id;
+    private Long  id;
     private String description;
 
     @Id
