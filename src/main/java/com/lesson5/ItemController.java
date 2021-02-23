@@ -29,7 +29,7 @@ public class ItemController {
     public @ResponseBody
    ResponseEntity <String> save(@RequestBody Item item) {
 
-        item.setDescription("testing item table");
+        item.setDescription("testing item table huyka");
         dao.save(item);
         return new ResponseEntity<>(HttpStatus.CREATED);
 
